@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items - E-Shop Stop</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .product h3 {
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            margin-bottom: 20px;
+        }
+
+        .add-to-cart {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .add-to-cart:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>E-Shop Stop</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="items">
+        <div class="container">
+            <h2>All Items</h2>
+            <div class="product-grid">
+                <!-- All items will be dynamically added here -->
+                <!-- Repeat this block for each product -->
+                <!-- Product 1 -->
+                <div class="product">
+                    <img src="acoustic_guitar.jpg" alt="acoustic_guitar">
+                    <h3>Acoustic Guitar</h3>
+                    <p>$499.99 </p>
+                    <button class="btn add-to-cart" data-product="Acoustic Guitar" data-price="$499.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="aspirin.jpg" alt="aspirin">
+                    <h3>Aspirin</h3>
+                    <p>$1.29 </p>
+                    <button class="btn add-to-cart" data-product="Aspirin" data-price="$1.29">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="backpack.jpg" alt="backpack">
+                    <h3>Backpack</h3>
+                    <p>$14.49 </p>
+                    <button class="btn add-to-cart" data-product="Backpack" data-price="$14.49">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="bananas.jpg" alt="bananas">
+                    <h3>Bananas</h3>
+                    <p>$0.99 </p>
+                    <button class="btn add-to-cart" data-product="Bananas" data-price="$0.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="bodywash.jpg" alt="bodywash">
+                    <h3>Bodywash</h3>
+                    <p>$9.29 </p>
+                    <button class="btn add-to-cart" data-product="Bodywash" data-price="$9.29">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="bread.jpg" alt="bread">
+                    <h3>Bread</h3>
+                    <p>$1.99 </p>
+                    <button class="btn add-to-cart" data-product="Bread" data-price="$1.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="deo.jpg" alt="deo">
+                    <h3>Men's Deodrant</h3>
+                    <p>$4.99 </p>
+                    <button class="btn add-to-cart" data-product="Men's Deodrant" data-price="$4.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="desk.jpg" alt="desk">
+                    <h3>White Office Desk</h3>
+                    <p>$59.99 </p>
+                    <button class="btn add-to-cart" data-product="White Office Desk" data-price="$5.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="dress.jpg" alt="dress">
+                    <h3>Floral Women's Dress</h3>
+                    <p>$12.99 </p>
+                    <button class="btn add-to-cart" data-product="Floral Women's Dress" data-price="$12.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="earrings.jpg" alt="earrings">
+                    <h3>Women's Earrings Set</h3>
+                    <p>$10.99 </p>
+                    <button class="btn add-to-cart" data-product="Women's Earrings Set" data-price="$10.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="flute.jpg" alt="flute">
+                    <h3>Flute</h3>
+                    <p>$19.99 </p>
+                    <button class="btn add-to-cart" data-product="Flute" data-price="$19.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="galaxy_A34_5G.jpg" alt="galaxy_A34_5G">
+                    <h3>Samsung Galaxy A34 5G</h3>
+                    <p>$999.99 </p>
+                    <button class="btn add-to-cart" data-product="Samsung Galaxy A34 5G" data-price="$999.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="guitar2.jpg" alt="electric_guitar">
+                    <h3>Electric Guitar</h3>
+                    <p>$799.99 </p>
+                    <button class="btn add-to-cart" data-product="Electric Guitar" data-price="$799.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="hairclip.jpg" alt="hairclip">
+                    <h3>Women's Hairclip</h3>
+                    <p>$1.49 </p>
+                    <button class="btn add-to-cart" data-product="Women's Hairclip" data-price="$1.49">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="handbag.jpg" alt="handbag">
+                    <h3>Women's Handbag</h3>
+                    <p>$59.49 </p>
+                    <button class="btn add-to-cart" data-product="Women's Handbag" data-price="$59.49">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="hat.jpg" alt="hat">
+                    <h3>Bucket Hat</h3>
+                    <p>$9.99 </p>
+                    <button class="btn add-to-cart" data-product="Bucket Hat" data-price="$9.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="headphone.jpeg" alt="headphone">
+                    <h3>Headphone</h3>
+                    <p>$19.99 </p>
+                    <button class="btn add-to-cart" data-product="Headphone" data-price="$19.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="ibuprofen.jpg" alt="ibuprofen">
+                    <h3>Ibuprofen</h3>
+                    <p>$1.49 </p>
+                    <button class="btn add-to-cart" data-product="Ibuprofen" data-price="$1.49">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="indoor_plant.jpg" alt="indoor_plant">
+                    <h3>Indoor Plant</h3>
+                    <p>$7.49 </p>
+                    <button class="btn add-to-cart" data-product="Indoor Plant" data-price="$7.49">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="keyboard.jpg" alt="keyboard">
+                    <h3>Gaming Keyboard</h3>
+                    <p>$39.99 </p>
+                    <button class="btn add-to-cart" data-product="Gaming Keyboard" data-price="$39.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="lamp.jpg.jpg" alt="lamp">
+                    <h3>Desk Lamp</h3>
+                    <p>$8.99 </p>
+                    <button class="btn add-to-cart" data-product="Desk Lamp" data-price="$8.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="laptop.jpg" alt="laptop">
+                    <h3>Laptop</h3>
+                    <p>$1129.99 <a href="electronics.html">Visit Electronics for more</a></p>
+                    <button class="btn add-to-cart" data-product="Laptop" data-price="$1129.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="lettuce.jpg" alt="lettuce">
+                    <h3>Fresh Lettuce</h3>
+                    <p>$0.99 </p>
+                    <button class="btn add-to-cart" data-product="Fresh Lettuce" data-price="$0.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="levo.jpg" alt="levo">
+                    <h3>Levocetirizine</h3>
+                    <p>$1.29 </p>
+                    <button class="btn add-to-cart" data-product="Levocetirizine" data-price="$1.29">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="mirror.jpg" alt="mirror">
+                    <h3>Makeup Mirror</h3>
+                    <p>$6.49 </p>
+                    <button class="btn add-to-cart" data-product="Makeup Mirror" data-price="$6.49">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="mouthwash.jpg" alt="mouthwash">
+                    <h3>Mouthwash</h3>
+                    <p>$4.99 </p>
+                    <button class="btn add-to-cart" data-product="Mouthwash" data-price="$4.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="mug.jpg" alt="mug">
+                    <h3>Office Mug</h3>
+                    <p>$8.99 </p>
+                    <button class="btn add-to-cart" data-product="Office Mug" data-price="$8.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="pillows.jpg" alt="pillows">
+                    <h3>Throw Pillows set of 4</h3>
+                    <p>$17.99 </p>
+                    <button class="btn add-to-cart" data-product="Throw Pillows set of 4" data-price="$17.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="plant.jpg" alt="plant">
+                    <h3>Potted Plant</h3>
+                    <p>$6.99 </p>
+                    <button class="btn add-to-cart" data-product="Potted Plant" data-price="$6.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="portable_fan.jpg" alt="portable_fan">
+                    <h3>Portable Fan</h3>
+                    <p>$12.99 </p>
+                    <button class="btn add-to-cart" data-product="Portable Fan" data-price="$12.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="purse.jpg" alt="purse">
+                    <h3>Women's Purse</h3>
+                    <p>$39.99 </p>
+                    <button class="btn add-to-cart" data-product="Women's Purse" data-price="$39.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="ring.jpg" alt="ring">
+                    <h3>Diamond Ring</h3>
+                    <p>$129.99 </p>
+                    <button class="btn add-to-cart" data-product="Diamond Ring" data-price="$129.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="shampoo.jpg" alt="shampoo">
+                    <h3>Shampoo</h3>
+                    <p>$13.99 </p>
+                    <button class="btn add-to-cart" data-product="Shampoo" data-price="$13.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="shirt.jpg" alt="shirt">
+                    <h3>Flannel Shirt Blue</h3>
+                    <p>$24.99 </p>
+                    <button class="btn add-to-cart" data-product="Flannel Shirt Blu" data-price="$24.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="shorts.jpg" alt="shorts">
+                    <h3>Denim Shorts</h3>
+                    <p>$13.99 </p>
+                    <button class="btn add-to-cart" data-product="Denim Shorts" data-price="$13.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="succulent.jpg" alt="succulent">
+                    <h3>Potted Succulent</h3>
+                    <p>$12.99 </p>
+                    <button class="btn add-to-cart" data-product="Potted Succulent" data-price="$12.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="tomato.jpg" alt="tomato">
+                    <h3>Organic Tomato</h3>
+                    <p>$0.49 </p>
+                    <button class="btn add-to-cart" data-product="Organic Tomato" data-price="$0.49">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="toy_piano.jpg" alt="toy_piano">
+                    <h3>Toy Piano</h3>
+                    <p>$49.99 </p>
+                    <button class="btn add-to-cart" data-product="Toy Piano" data-price="$49.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="tv1.jpg" alt="tv1">
+                    <h3>LED Television 80"</h3>
+                    <p>$1149.99 </p>
+                    <button class="btn add-to-cart" data-product="LED Television 80-inch" data-price="$1149.99">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="xanax.jpg" alt="xanax">
+                    <h3>Xanax</h3>
+                    <p>$1.99 </p>
+                    <button class="btn add-to-cart" data-product="Xanax" data-price="$1.99">Add to Cart</button>
+                </div>
+                <!-- Repeat this block for each product -->
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 E-Shop Stop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to handle adding products to the cart
+        function addToCart(product, price) {
+            // Retrieve existing cart items from local storage or initialize an empty array
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            // Add the new product to the cart
+            cartItems.push({ product, price });
+
+            // Save the updated cart items to local storage
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            // Optionally, redirect to the cart page
+            window.location.href = 'cart.html';
+        }
+
+        // Add event listeners to "Add to Cart" buttons
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const product = button.dataset.product;
+                const price = button.dataset.price;
+                addToCart(product, price);
+            });
+        });
+    </script>
+</body>
+</html>

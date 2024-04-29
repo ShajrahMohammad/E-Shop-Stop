@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - E-Shop Stop</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .empty-cart-message {
+            text-align: center;
+            font-size: 18px;
+            color: #999;
+            margin-top: 50px;
+        }
+
+        .cart-items {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .cart-item p {
+            margin: 0;
+        }
+
+        .remove-button {
+            background-color: #ff4444;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .remove-button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>E-Shop Stop</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="items.html">Continue Shopping</a></li>
+                    <li><a href="sale.html">Shop Sale Items</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="cart">
+        <div class="container">
+            <h2>Your Shopping Cart</h2>
+            <button class="btn empty-cart-button">Empty Cart</button>
+            <div id="cart-items" class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <p id="empty-cart-message" class="empty-cart-message" style="display: none;">Your Cart is Empty</p>
+            <p id="total">Total: $0.00</p>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 E-Shop Stop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize total variable
+        let total = 0.00;
+
+        // Check if cart is empty and display message accordingly
+        window.onload = function() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+            const emptyCartMessage = document.getElementById('empty-cart-message');
+            const cartItemsContainer = document.getElementById('cart-items');
+            const totalElement = document.getElementById('total');
+
+            if (cartItems && cartItems.length > 0) {
+                // Cart is not empty, display cart items
+                emptyCartMessage.style.display = 'none';
+                cartItems.forEach(item => {
+                    // Update total
+                    total += parseFloat(item.price.replace('$', ''));
+                    totalElement.textContent = `Total: $${total.toFixed(2)}`;
+
+                    // Create cart item element
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-item');
+                    cartItem.innerHTML = `
+                        <p>${item.product} - ${item.price}</p>
+                        <button class="remove-button" onclick="removeItem('${item.product}', '${item.price}')">Remove</button>
+                    `;
+                    cartItemsContainer.appendChild(cartItem);
+                });
+            } else {
+                // Cart is empty, display empty cart message
+                emptyCartMessage.style.display = 'block';
+            }
+        };
+
+        // Function to remove item from cart
+        function removeItem(product, price) {
+            // Retrieve existing cart items from local storage
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            // Find index of item to remove
+            const index = cartItems.findIndex(item => item.product === product && item.price === price);
+
+            // If item found, remove it from cartItems array
+            if (index !== -1) {
+                cartItems.splice(index, 1);
+            }
+
+            // Update local storage with updated cart items
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            // Reload page to reflect changes
+            location.reload();
+        }
+
+        // Function to empty the cart
+        function emptyCart() {
+            // Clear local storage
+            localStorage.removeItem('cartItems');
+
+            // Reload page to reflect changes
+            location.reload();
+        }
+
+        // Add event listener to empty cart button
+        const emptyCartButton = document.querySelector('.empty-cart-button');
+        emptyCartButton.addEventListener('click', emptyCart);
+    </script>
+</body>
+</html>

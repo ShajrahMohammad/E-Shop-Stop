@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shop Stop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>E-Shop Stop</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="banner">
+        <div class="container">
+            <h2>Welcome to E-Shop Stop</h2>
+            <p>Your one-stop destination for all your shopping needs!</p>
+            <a href="items.html" class="btn">Shop Now</a>
+        </div>
+    </section>
+    <section class="sales-banner">
+        <div class="container">
+            <h2>Exclusive Sales</h2>
+            <p>Check out our latest deals and offers!</p>
+            <a href="sale.html" class="btn">View Sales</a>
+        </div>
+    </section>
+    <section class="products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="product-grid" id="featured-products">
+                <!-- Featured products will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 E-Shop Stop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Placeholder product data
+        const products = [
+            { name: 'TV', price: '$1299.99 Visit Electronics for more', image: 'tv.jpg' },
+            { name: 'Electric Guitar', price: '$49.99 Visit Music for more', image: 'Guitar2.jpg' },
+            { name: 'Groceries', price: 'Fresh produce everyday', image: 'groceries.jpg' },
+            { name: 'Medicines', price: 'Precription and Over the Counter Medicines', image: 'Pharma.jpg'},
+            { name: 'Home Decor', price: 'Starting @ $9.99', image: 'lamp.jpg' },
+            { name: 'Office Decor', price: 'Starting @ $19.99', image: 'desk.jpg' },
+            { name: 'Designer bags for women', price: 'Starting @ $49.99', image: 'handbag.jpg' },
+            { name: 'Accessories for Women', price:'Starting @ $9.99', image: 'fashion.jpg' },
+            { name: 'Clothing', price: 'Starting @ $9.99', image: 'clothes.jpg' },
+            { name: 'Personal Care', price: 'Starting @ $4.99', image: 'pc.jpg' },
+            // Add more products as needed
+        ];
+
+        // Function to generate HTML for a product
+        function getProductHTML(product) {
+            return `
+                <div class="product">
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>${product.price}</p>
+                    <a href="items.html" class="btn">View More</a>
+                </div>
+            `;
+        }
+
+        // Function to display products in the featured products section
+        function displayFeaturedProducts() {
+            const container = document.getElementById('featured-products');
+            let html = '';
+
+            // Loop through products and generate HTML
+            for (let i = 0; i < 5; i++) { // 5 rows
+                html += '<div class="product-row">'; // Start new row
+                for (let j = 0; j < 4; j++) { // 4 products in each row
+                    const productIndex = i * 4 + j;
+                    if (productIndex < products.length) { // Make sure there are products left
+                        const product = products[productIndex];
+                        html += `<div class="product">${getProductHTML(product)}</div>`;
+                    }
+                }
+                html += '</div>'; // End row
+            }
+
+            // Insert generated HTML into the container
+            container.innerHTML = html; 
+        }
+
+        // Call the function to display featured products
+        displayFeaturedProducts();
+    </script>
+</body>
+</html>
